@@ -1,0 +1,9 @@
+<h1> Students </h1>
+
+<% @students.each do |student| %>
+  <div id="students-<%= student.id %>">
+  <p>Name: <%= student.name %> </p>
+  <p>Age: <%= student.age %> </p>
+  <p>House: <%= student.house %> </p>
+  </div>
+<% end %>
