@@ -26,14 +26,20 @@ RSpec.describe 'students index page' do
       expect(page).to have_content("House: Griffindor")
     end
   end
+
+  it "shows the average age of all students" do
+    harry = Student.create!(name: "Harry Potter", age: 13, house: "Griffindor")
+    draco = Student.create!(name: "Draco Malfoy", age: 14, house: "Slytherin")
+    ron = Student.create!(name: "Ron Weasley", age: 15, house: "Griffindor")
+
+    visit "/students"
+
+    expect(page).to have_content("Average Age: 14")
+  end
 end
 
-# User Story 1 of 4
-
 # As a visitor,
-# When I visit '/students',
-# I see a list of students with the following information:
-# -Name
-# -Age
-# -House
-# (e.g. "Name: Casseopia Black, Age: 14, House: Slytherin")
+# When I visit '/students'
+# I see the average age of all students.
+
+# (e.g. "Average Age: 14.5")
