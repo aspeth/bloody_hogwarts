@@ -3,5 +3,8 @@
 <% @courses.each do |course| %>
   <div id="courses-<%= course.id %>">
   <p> <%= "#{course.name}: #{course.student_count}" %> </p>
+      <% course.alpha_students.each do |student| %>
+          <p> <%= student.name %> </p>
+      <% end %>
   </div>
 <% end %>
