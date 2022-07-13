@@ -21,6 +21,14 @@ RSpec.describe Student, type: :model do
 
       expect(Student.average_age).to eq(14)
     end
+
+    it "#self.alpha_order" do
+      harry = Student.create!(name: "Harry Potter", age: 13, house: "Griffindor")
+      draco = Student.create!(name: "Draco Malfoy", age: 14, house: "Slytherin")
+      ron = Student.create!(name: "Ron Weasley", age: 15, house: "Griffindor")
+
+      expect(Student.alpha_order).to eq([draco, harry, ron])
+    end
   end
 
 end

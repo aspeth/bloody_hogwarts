@@ -9,8 +9,8 @@ RSpec.describe 'courses index page' do
     dada = Course.create!(name: "Defense Against the Dark Arts")
     death_eating = Course.create!(name: "Death Eating 101")
 
-    student_course_1 = StudentCourse.create!(student_id: harry.id, course_id: herbology.id)
-    student_course_2 = StudentCourse.create!(student_id: draco.id, course_id: herbology.id)
+    harry_herbology = StudentCourse.create!(student_id: harry.id, course_id: herbology.id)
+    draco_herbology = StudentCourse.create!(student_id: draco.id, course_id: herbology.id)
     student_course_3 = StudentCourse.create!(student_id: harry.id, course_id: dada.id)
     student_course_4 = StudentCourse.create!(student_id: draco.id, course_id: death_eating.id)
 

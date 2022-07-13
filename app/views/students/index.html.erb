@@ -1,6 +1,6 @@
 <h1> Students </h1>
 
-<% @students.each do |student| %>
+<% @students.alpha_order.each do |student| %>
   <div id="students-<%= student.id %>">
   <p>Name: <%= student.name %> </p>
   <p>Age: <%= student.age %> </p>
